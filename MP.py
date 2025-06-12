@@ -4,7 +4,6 @@ from tkinter import filedialog, messagebox
 from pygame import mixer
 import threading
 import time
-# ...existing code...
 
 class MusicPlayer:
     def __init__(self, root):
@@ -18,14 +17,12 @@ class MusicPlayer:
         self.current_index = 0
         self.folder_path = ''
 
-        # Tambahan untuk fitur baru
         self.is_playing = False
         self.duration = 0
         self.updating_scale = False
 
         self.create_widgets()
 
-        # Thread untuk update progress bar
         self.update_progress_bar_thread = threading.Thread(target=self.update_progress_bar, daemon=True)
         self.update_progress_bar_thread.start()
 
@@ -181,7 +178,3 @@ if __name__ == '__main__':
     root = tk.Tk()
     app = MusicPlayer(root)
     root.mainloop()
-    # Progress bar sudah dapat digeser untuk mengatur posisi lagu melalui fungsi seek_music.
-    # Tidak perlu kode tambahan di luar kelas.
-    # Pastikan Anda menggeser bar saat lagu sedang dimainkan/paused.
-
